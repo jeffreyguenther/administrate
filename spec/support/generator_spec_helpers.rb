@@ -15,8 +15,8 @@ module GeneratorSpecHelpers
     )
   end
 
-  def invoke_generator(*args)
-    have_received(:invoke).with(*args)
+  def invoke_generator(generator, *args)
+    have_received(:invoke).with(generator, args, behavior: :invoke)
   end
 
   def each_file_in(path)
